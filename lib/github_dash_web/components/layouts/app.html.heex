@@ -1,0 +1,52 @@
+<header data-theme="forest" class="px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto flex justify-between items-center p-6">
+    <!-- Logo / Brand Name -->
+    <div class="text-2xl font-bold text-left">
+      GitProfile Viewer
+    </div>
+    <!-- Search Bar -->
+    <div class="relative w-full max-w-xs">
+      <input
+        type="text"
+        placeholder="Search GitHub username..."
+        class="w-full p-2 pl-10 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+      />
+      <svg
+        class="absolute top-2 left-2 w-6 h-6 text-gray-400"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 2a6 6 0 100 12 6 6 0 000-12zm10 14a1 1 0 11-2 0 1 1 0 012 0zm-3-1a9 9 0 11-2-1.23l4.43 4.42a1 1 0 11-1.42 1.42l-4.42-4.43A9 9 0 0117 15z"
+        />
+      </svg>
+    </div>
+    <%!-- <!-- Mobile Menu Icon -->
+    <div class="md:hidden flex items-center">
+      <button class="text-white focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </button>
+    </div> --%>
+  </div>
+</header>
+<main class="px-4 py-20 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-2xl">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </div>
+</main>

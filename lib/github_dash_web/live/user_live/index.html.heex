@@ -1,0 +1,26 @@
+<%!-- <.table id="users" rows={@streams.users}>
+  <:col :let={{_id, user}} label="Avatar"> --%>
+<%= for user <- @streams.users do %>
+  <UserCardComponent.user_card user={user} />
+<% end %>
+<%!-- </:col>
+
+  <:col :let={{_id, user}} label="Repos"><%= user.repos_count %></:col>
+  <:col :let={{_id, user}} label="Url">
+    <div class="flex flex-row">
+      <LinkIconComponent.link_icon />
+      <div class="px-2"><a href={user.html_url}><%= user.html_url %></a></div>
+    </div>
+  </:col>
+</.table> --%>
+
+<.modal :if={@live_action in [:new, :edit]} id="user-modal" show on_cancel={JS.patch(~p"/users")}>
+  <.live_component
+    module={GithubDashWeb.UserLive.FormComponent}
+    id={@user.id || :new}
+    title={@page_title}
+    action={@live_action}
+    user={@user}
+    patch={~p"/users"}
+  />
+</.modal>
